@@ -1,7 +1,10 @@
 # Exercise-07-Multiplexer-and-De-multiplexer
-### AIM: To implement 4 X1 multiplexer and 1X4 de multiplexer using verilog and validate its outputs
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
+### AIM: 
+To implement 4 X1 multiplexer and 1X4 de multiplexer using verilog and validate its outputs
+### HARDWARE REQUIRED:  
+– PC, Cyclone II , USB flasher
+### SOFTWARE REQUIRED:   
+Quartus prime
 ### THEORY 
 
 ## What are Multiplexer and Demultiplexer?
@@ -47,42 +50,72 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
 
+STEP 1: Open the quartus 2 software give the file name to write the program.
+
+STEP 2: Declare input and output variable throuugh module and filename. 
+
+STEP 3: Now,declare input,output and wire variables. 
+
+STEP 4: for multiplexer we use 2 not gate,4 and gate and 1 or gate which is output. similary, for demultiplexer we use 2 not gate and 4 and gate which is output. 
+
+STEP 5: After completing program , we have to end program by using endmodule command which is used in verilog. STEP 6: now we can save and run the porgram.
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: AMRUTHA RAJSHEKER
+RegisterNumber: 212222110003
 
+MULTIPLEXER:
+module mux4 (s0,s1,a0,a1,a2,a3,y);
+input a0,a1,a2,a3,s0,s1;
+output y;
+wire a,b,c,d,s0bar,s1bar;
+not (s0bar,s0);
+not (s1bar,s1);
+and (a,s0,s1,a3);
+and (b,s0bar,s1,a2);
+and (c,s0,s1bar,a1);
+and (d,s0bar,s1bar,a0);
+or (y,a,b,c,d);
+endmodule
 
+DEMULTIPLEXER:
+module demux4 (i,s0,s1,y0,y1,y2,y3);
+input s0,s1,i;
+output y0,y1,y2,y3;
+wire s0bar,s1bar;
+not (s0bar,s0);
+not (s1bar,s1);
+and (y3,i,s1,s0);
+and (y2,i,s1,s0bar);
+and (y1,i,s1bar,s0);
+and (y0,i,s1bar,s0bar);
+endmodule
+```
 
+## RTL LOGIC  
+### MULTIPLEXER
+![7 1](https://github.com/AmruthaRajsheker/Exercise-07-Multiplexer-and-De--multiplexer/assets/119475943/49c0b234-7d0e-4722-9b7f-8622884a5808)
 
+### DEMULTIPLEXER
+![7 2](https://github.com/AmruthaRajsheker/Exercise-07-Multiplexer-and-De--multiplexer/assets/119475943/710ee8cd-73dd-4f05-ba1c-3c0b06b811ea)
 
+## TIMING DIGRAMS  
+### MULTIPLEXER
+![7 3](https://github.com/AmruthaRajsheker/Exercise-07-Multiplexer-and-De--multiplexer/assets/119475943/0a967135-e948-48c7-85fe-d4a31c25683c)
 
-### RTL LOGIC  
+### DEMULTIPLEXER
+![7 4](https://github.com/AmruthaRajsheker/Exercise-07-Multiplexer-and-De--multiplexer/assets/119475943/d56e2075-4fd9-4234-9dbe-8d4e2ffaceae)
 
+## TRUTH TABLE 
+### MULTIPLEXER
+![7 5](https://github.com/AmruthaRajsheker/Exercise-07-Multiplexer-and-De--multiplexer/assets/119475943/f4858bd8-2daf-4615-86ff-8dad7bb21680)
 
+### DEMULTIPLEXER
+![7 6](https://github.com/AmruthaRajsheker/Exercise-07-Multiplexer-and-De--multiplexer/assets/119475943/56ddf7ca-7261-42ae-a3b8-3278448fc442)
 
-
-
-
-
-
-### TIMING DIGRAMS  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+## RESULTS 
+Thus the program to design multiplexer and de-multiplexer is executed successfully .
