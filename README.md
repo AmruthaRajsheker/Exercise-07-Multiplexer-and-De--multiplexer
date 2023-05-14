@@ -98,6 +98,7 @@ and (y0,i,s1bar,s0bar);
 endmodule
 ```
 
+
 ## RTL LOGIC  
 ### MULTIPLEXER
 ![7 1](https://github.com/AmruthaRajsheker/Exercise-07-Multiplexer-and-De--multiplexer/assets/119475943/49c0b234-7d0e-4722-9b7f-8622884a5808)
